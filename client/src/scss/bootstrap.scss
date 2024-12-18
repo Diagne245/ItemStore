@@ -1,0 +1,535 @@
+$font-family-sans-serif: 'Comic Neue', cursive;
+
+// Colors
+$primary: #00aa7f;
+$secondary: #464646;
+$dark: #3d3d3d;
+$light: rgb(232, 232, 231);
+$body-color: #494c52;
+
+// Theme Colors
+$success: #228b22;
+$info: #10bcee;
+$warning: rgb(219, 157, 23);
+$danger: rgb(207, 92, 92);
+
+// Shadows
+$enable-shadows: true;
+$box-shadow-lg: 0.5rem 0.5rem 1rem rgba(46, 46, 46, 0.85);
+
+// Links
+$link-hover-color: $primary;
+
+// hr
+$hr-border-color: #fff;
+$hr-border-width: 1px;
+$hr-opacity: 1;
+$hr-margin-y: 0;
+
+// Buttons
+$button-radius: 50px;
+$button-padding-x: 20px;
+$button-padding-y: 10px;
+$btn-color: #fff !important;
+$btn-hover-color: #fff !important;
+$btn-font-weight: 800;
+$btn-close-color: $danger;
+$btn-close-opacity: 1;
+
+// Border Radius
+$btn-border-radius: $button-radius;
+$btn-border-radius-sm: $button-radius;
+$btn-border-radius-lg: $button-radius;
+$navbar-toggler-border-radius: 5px;
+
+// Buttons padding
+$btn-padding-x: $button-padding-x;
+$btn-padding-x-sm: $button-padding-x;
+$btn-padding-x-lg: $button-padding-x;
+$btn-padding-x-xl: $button-padding-x;
+
+$btn-padding-y: $button-padding-y;
+$btn-padding-y-sm: $button-padding-y;
+$btn-padding-y-lg: $button-padding-y;
+$btn-padding-y-xl: $button-padding-y;
+
+// Inputs
+$input-radius: 40px;
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 1rem;
+$input-border-radius: $input-radius;
+$input-border-radius-sm: $input-radius;
+$input-border-radius-lg: $input-radius;
+
+// List Group
+$list-group-bg: transparent;
+$list-group-item-padding-y: 0;
+$list-group-item-padding-x: 0;
+
+// Cards
+$card-bg: none;
+
+// Modals
+$modal-transition: all 0.75s ease;
+$modal-backdrop-bg: #fff;
+$modal-backdrop-opacity: 0.4;
+
+// Spacers
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+  8: $spacer * 8,
+  9: $spacer * 12,
+) !default;
+
+$headings-margin-bottom: $spacer * 1;
+// Gutters
+$grid-gutter-width: 1.5rem;
+$gutters: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+  8: $spacer * 8,
+  9: $spacer * 12,
+);
+// Negative Margin
+$enable-negative-margins: true;
+
+// scss-docs-start dropdown-variables
+$dropdown-min-width: 7rem;
+$dropdown-font-size: 1.1rem;
+$dropdown-color: $warning;
+$dropdown-bg: $secondary;
+
+$dropdown-item-padding-x: 0.5rem;
+$dropdown-item-padding-y: 0;
+
+$dropdown-link-active-bg: $danger;
+
+// Add values to predefined classes
+@import '/node_modules/bootstrap/scss/functions';
+@import '/node_modules/bootstrap/scss/variables';
+@import '/node_modules/bootstrap/scss/variables-dark';
+@import '/node_modules/bootstrap/scss/maps';
+@import '/node_modules/bootstrap/scss/mixins';
+@import '/node_modules/bootstrap/scss/utilities';
+
+// Add breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  xxs: 438px,
+  sm: 530px,
+  mmd: 664px,
+  md: 768px,
+  mlg: 880px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+  xxs: 401px,
+  sm: 500px,
+  mmd: 622px,
+  md: 720px,
+  mlg: 840px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+// Position Values
+$position-values: (
+  0: 0,
+  1: 1%,
+  2: 2%,
+  3: 3%,
+  4: 4%,
+  5: 5%,
+  10: 10%,
+  15: 15%,
+  20: 20%,
+  25: 25%,
+  30: 30%,
+  35: 35%,
+  40: 40%,
+  45: 45%,
+  50: 50%,
+  55: 55%,
+  60: 60%,
+  65: 65%,
+  70: 70%,
+  75: 75%,
+  80: 80%,
+  85: 85%,
+  90: 90%,
+  95: 95%,
+  100: 100%,
+  n50: -50%,
+);
+
+// ----------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'top':
+      map-merge(
+        map-get($utilities, 'top'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'top'), 'values'),
+              $position-values
+            ),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'top':
+      map-merge(
+        map-get($utilities, 'top'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// -------------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'bottom':
+      map-merge(
+        map-get($utilities, 'bottom'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'bottom'), 'values'),
+              $position-values
+            ),
+        )
+      ),
+  )
+);
+$utilities: map-merge(
+  $utilities,
+  (
+    'bottom':
+      map-merge(
+        map-get($utilities, 'bottom'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// -----------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'start':
+      map-merge(
+        map-get($utilities, 'start'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'start'), 'values'),
+              $position-values
+            ),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'start':
+      map-merge(
+        map-get($utilities, 'start'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// --------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'end':
+      map-merge(
+        map-get($utilities, 'end'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'end'), 'values'),
+              $position-values
+            ),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'end':
+      map-merge(
+        map-get($utilities, 'end'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// Scale Modals
+@include media-breakpoint-up(sm) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: min(90%, 400px) !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+$modal-xxl: 1400px !default;
+// Modals Size
+@include media-breakpoint-up(xxl) {
+  .modal-xxl {
+    --#{$prefix}modal-width: #{$modal-xxl};
+  }
+}
+
+// Rounded class-------
+$border-radius-3xl: 3rem !default;
+$border-radius-4xl: 4rem !default;
+$border-radius-5xl: 5rem !default;
+
+// -------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'rounded':
+      map-merge(
+        map-get($utilities, 'rounded'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'rounded'), 'values'),
+              (
+                6: $border-radius-3xl,
+                7: $border-radius-4xl,
+                8: $border-radius-5xl,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+// ------------------------
+$values: (
+  5: 5%,
+  10: 10%,
+  15: 15%,
+  20: 20%,
+  30: 30%,
+  35: 35%,
+  40: 40%,
+  45: 45%,
+  55: 55%,
+  60: 60%,
+  65: 65%,
+  70: 70%,
+  80: 80%,
+  85: 85%,
+  90: 90%,
+  95: 95%,
+);
+
+// Width class --------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'width':
+      map-merge(
+        map-get($utilities, 'width'),
+        (
+          values:
+            map-merge(map-get(map-get($utilities, 'width'), 'values'), $values),
+        )
+      ),
+  )
+);
+
+// Enable Responsive classes
+$utilities: map-merge(
+  $utilities,
+  (
+    'width':
+      map-merge(
+        map-get($utilities, 'width'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// Height class ------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'height':
+      map-merge(
+        map-get($utilities, 'height'),
+        (
+          values:
+            map-merge(map-get(map-get($utilities, 'height'), 'values'), $values),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'height':
+      map-merge(
+        map-get($utilities, 'height'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// Opacity
+$utilities: map-merge(
+  $utilities,
+  (
+    'opacity':
+      map-merge(
+        map-get($utilities, 'opacity'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'opacity'), 'values'),
+              (
+                5: 0.5,
+                10: 0.1,
+                15: 0.15,
+                20: 0.2,
+                30: 0.3,
+                35: 0.35,
+                40: 0.4,
+                45: 0.45,
+                60: 0.6,
+                65: 0.65,
+                70: 0.7,
+                80: 0.8,
+                85: 0.85,
+                90: 0.9,
+                95: 0.95,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'opacity':
+      map-merge(
+        map-get($utilities, 'opacity'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// -------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'font-size':
+      map-merge(
+        map-get($utilities, 'font-size'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'font-weight':
+      map-merge(
+        map-get($utilities, 'font-weight'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'font-weight'), 'values'),
+              (
+                none: 100,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'font-weight':
+      map-merge(
+        map-get($utilities, 'font-weight'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+// -------------------------
+$utilities: map-merge(
+  $utilities,
+  (
+    'color':
+      map-merge(
+        map-get($utilities, 'color'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+@import '/node_modules/bootstrap/scss/bootstrap.scss';

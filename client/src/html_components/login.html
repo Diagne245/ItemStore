@@ -1,0 +1,66 @@
+<div
+  class="main-inner pt-4 d-flex flex-column justify-content-sm-between align-items-center"
+>
+  <div class="main-inner-top w-100">
+    <header id="main-header" class="main-header w-100 mb-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="main-base d-grid">
+            <div
+              class="main-header-control d-flex gap-2 flex-column align-items-center"
+            >
+              <form id="main-form" class="main-form w-100">
+                <input
+                  type="text"
+                  name="form-input"
+                  class="form-input form-control form-control-lg text-center mb-2"
+                  spellcheck="false"
+                  autocomplete="off"
+                  placeholder="New Entry"
+                  onfocus="this.placeholder=''"
+                  onblur="this.placeholder='New Entry'"
+                />
+                <div class="buttons d-flex gap-1 justify-content-center"></div>
+              </form>
+              <hr class="w-25 mt-0 d-none" />
+              <button type="button" class="about-btn btn btn-warning fw-bold">
+                <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+                About
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main id="user-login" class="my-4">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+        <div
+          class="login-card d-flex flex-column align-items-center text-white"
+        >
+          <i
+            class="login-btn bi bi-person-square text-white mb-3"
+            data-bs-toggle="modal"
+            data-bs-target="#login-form-modal"
+          ></i>
+          <h4>
+            Welcome to the
+            <strong class="fw-bold fs-4 text-warning">ItemStore</strong>
+          </h4>
+          <p class="fw-normal">
+            Let's take our focus and productivity to the next level
+          </p>
+          <button
+            type="button"
+            class="logon-btn btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#login-form-modal"
+          >
+            Log On
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,47 @@
+// Variables-----------------------------
+$main-container-width: 900px;
+
+$dark-color: #3d3d3d;
+$medium-color: #464646;
+$light-color: #e8e8e7;
+$selection-color: rgb(178, 68, 68);
+$delete-color: rgb(207, 92, 92);
+$main-bg-color: #242424;
+$group-bg-color: #f4f4f4;
+$group-color: #00aa7f;
+$about-color: rgb(219, 157, 23);
+$update-color: #228b22;
+
+// @Extend ------------------------
+%autofill-shared {
+  background-color: transparent !important;
+  color: $group-color !important ;
+  border: none !important;
+}
+
+%filter-input-shared {
+  padding: 0.3rem 0.3rem 0;
+  margin: 0 auto;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  font-size: 1.25rem;
+  color: #fff;
+
+  &:focus {
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+%title-shared {
+  color: var(--bs-primary);
+  font-weight: normal !important;
+  width: 80%;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  height: fit-content;
+  text-align: center;
+  margin: 0 auto 0.4rem;
+}
